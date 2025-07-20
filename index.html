@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세마중학교 월별 급식표</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4facfe">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="세마중 급식표">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('sw.js');
+        });
+      }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="darkmode-toggle-box">
+            <button id="darkModeToggle" class="darkmode-toggle">🌙 다크모드</button>
+        </div>
+        <div class="logo-box">
+            <div class="school-name">세마중학교</div>
+            <h1>월별 급식표</h1>
+        </div>
+        <div class="save-info">
+            <span id="editModeInfo">급식정보를 수정할 수 있습니다.</span>
+            <button id="editModeBtn">수정 모드</button>
+            <button id="exitEditModeBtn" style="display:none;">수정 모드 해제</button>
+        </div>
+        <div id="pwBox" class="pw-box" style="display:none;">
+            <div class="pw-inner">
+                <div class="pw-row">
+                    <input type="password" id="editPw" placeholder="비밀번호 입력" class="pw-input">
+                    <button id="pwSubmitBtn" class="pw-btn">확인</button>
+                </div>
+                <span id="pwMsg" class="pw-msg"></span>
+            </div>
+        </div>
+        <div class="month-selector">
+            <label for="monthSelect">월 선택: </label>
+            <select id="monthSelect"></select>
+        </div>
+        <table id="lunchTable">
+            <thead>
+                <tr>
+                    <th>날짜</th>
+                    <th>급식</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 급식 데이터가 여기에 표시됩니다 -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
